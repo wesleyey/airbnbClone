@@ -2,6 +2,15 @@ from rest_framework import serializers
 from .models import Category
 
 
+class CategorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Category
+        fields = "__all__"
+        # fields 요소 하나씩 열거, exclude 제외할 것 명시
+
+
+"""
 class CategrySerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(
@@ -21,3 +30,4 @@ class CategrySerializer(serializers.Serializer):
         instance.kind = validated_data.get("kind", instance.kind)
         instance.save()
         return instance
+"""
