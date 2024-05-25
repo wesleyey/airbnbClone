@@ -6,7 +6,10 @@ class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Category
-        fields = "__all__"
+        fields = (
+            "name",
+            "kind",
+        )
         # fields 요소 하나씩 열거, exclude 제외할 것 명시
 
 
