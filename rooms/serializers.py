@@ -36,3 +36,10 @@ class RoomDetailSerializer(ModelSerializer):
         model = Room
         fields = "__all__"
         # depth = 1
+
+
+"""
+    def create(self, validated_data):
+        print(validated_data)
+        return
+"""
