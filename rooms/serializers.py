@@ -21,7 +21,8 @@ class RoomListSerializer(ModelSerializer):
 
     rating_average = serializers.SerializerMethodField()
     is_owner = serializers.SerializerMethodField()
-    photos = PhotoSerializer(many=True, read_only=True)
+    # photos = PhotoSerializer(many=True, read_only=True)
+    photo_set = PhotoSerializer(many=True, read_only=True)
 
     class Meta:
         model = Room
@@ -33,7 +34,7 @@ class RoomListSerializer(ModelSerializer):
             "price",
             "rating_average",
             "is_owner",
-            "photos",
+            "photo_set",
         )
 
     def get_rating_average(self, room):
@@ -54,7 +55,8 @@ class RoomDetailSerializer(ModelSerializer):
     rating_average = serializers.SerializerMethodField()
     is_owner = serializers.SerializerMethodField()
     is_liked = serializers.SerializerMethodField()
-    photos = PhotoSerializer(many=True, read_only=True)
+    # photos = PhotoSerializer(many=True, read_only=True)
+    photo_set = PhotoSerializer(many=True, read_only=True)
 
     class Meta:
         model = Room
